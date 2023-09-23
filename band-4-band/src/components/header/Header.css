@@ -36,3 +36,37 @@
 	max-width: 1200px;
 	margin: 0 auto;
 }
+
+/* src/components/ConnectButton.css */
+.connect-button {
+	background-color: transparent;
+	color: #00ff00;
+	border: 2px solid #00ff00;
+	padding: 10px 20px;
+	border-radius: 4px;
+	font-size: 16px;
+	cursor: pointer;
+	text-transform: uppercase;
+	transition: all 0.3s ease-in-out;
+    position: absolute;
+    top: 20px;
+    right: 10px;
+}
+
+.connect-button:hover {
+	background-color: #00ff00;
+	color: #101820;
+	animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+	0% {
+		box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+	}
+	50% {
+		box-shadow: 0 0 20px rgba(0, 255, 0, 0.8);
+	}
+	100% {
+		box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+	}
+}

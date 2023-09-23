@@ -1,0 +1,13 @@
+/* src/components/ConnectButton.css */
+.connect-button {
+	/* ... previous styles ... */
+	&.connected {
+		background-color: #00ff00;
+		border-color: #00ff00;
+	}
+}
+
+.user-address {
+	color: #00ff00;
+	margin-top: 10px;
+}
