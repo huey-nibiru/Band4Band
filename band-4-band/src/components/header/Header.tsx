@@ -1,5 +1,7 @@
 import React, { useCallback, useState } from "react";
 import "./Header.css";
+import AudioButton from "../audio/Playback";
+import bands from "../../assets/bands.mp3";
 
 const Header: React.FC = () => {
 	const [connected, setConnected] = useState(false);
@@ -38,6 +40,9 @@ const Header: React.FC = () => {
 	return (
 		<>
 			<header className="navbar">
+				<div className="audio">
+					<AudioButton audioFile={bands} />
+				</div>
 				<div className="container">BAND-4-BAND</div>
 				{connected ? (
 					<div className="connected">

@@ -1,0 +1,48 @@
+/* audio-button.css */
+.audio-button-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.audio-button {
+	background-color: black;
+	border: none;
+	color: #00ff00; /* Green color */
+	padding: 10px 20px;
+	font-size: 16px;
+	border-radius: 5px;
+	cursor: pointer;
+	box-shadow: 0 0 10px #00ff00; /* Green glow */
+	transition: box-shadow 0.3s;
+}
+
+.audio-button:hover {
+	box-shadow: 0 0 20px #00ff00; /* Increase glow on hover */
+}
+
+.replay-button {
+	background-color: black;
+	border: none;
+	color: #00ff00; /* Green color */
+	padding: 10px 20px;
+	font-size: 16px;
+	border-radius: 5px;
+	cursor: pointer;
+	margin-top: 10px;
+	box-shadow: 0 0 10px #00ff00; /* Green glow */
+	transition: box-shadow 0.3s;
+}
+
+.replay-button:hover {
+	box-shadow: 0 0 20px #00ff00; /* Increase glow on hover */
+}
+
+.audio-button-container {
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	z-index: 999; /* To make sure it's above other content */
+}
+
+/* Add any other styles you need for your button */
