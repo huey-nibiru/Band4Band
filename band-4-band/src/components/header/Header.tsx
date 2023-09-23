@@ -2,6 +2,7 @@ import React, { useCallback, useState } from "react";
 import "./Header.css";
 import AudioButton from "../audio/Playback";
 import bands from "../../assets/bands.mp3";
+import ProfileSettings from "../profile/Settings"; // Import the ProfileSettings component
 
 const Header: React.FC = () => {
 	const [connected, setConnected] = useState(false);
@@ -37,6 +38,31 @@ const Header: React.FC = () => {
 		}
 	}, []);
 
+	const saveUsername = (username: string) => {
+		// Send a request to your backend API to save the username associated with the wallet address
+		// You can use fetch or a library like axios for this.
+		// Example using fetch:
+		fetch("/api/save-username", {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify({ username, walletAddress }),
+		})
+			.then((response) => {
+				if (response.ok) {
+					// Username saved successfully
+					alert("Username saved successfully.");
+				} else {
+					alert("Error saving username.");
+				}
+			})
+			.catch((error) => {
+				console.error(error);
+				alert("Error saving username.");
+			});
+	};
+
 	return (
 		<>
 			<header className="navbar">
@@ -49,6 +75,11 @@ const Header: React.FC = () => {
 						Connected
 						<br />
 						{formatWalletAddress(walletAddress)}
+						{/* Render the ProfileSettings component */}
+						<ProfileSettings
+							walletAddress={walletAddress}
+							onSave={saveUsername}
+						/>
 					</div>
 				) : (
 					<button className="connect-button" onClick={connectToMetaMask}>

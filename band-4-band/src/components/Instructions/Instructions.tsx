@@ -2,7 +2,7 @@
 import React from "react";
 import "./Instructions.css";
 
-const GlassmorphismBox: React.FC = () => {
+const InstructionBox: React.FC = () => {
 	return (
 		<div className="glassmorphism-box">
 			<h1>LETS GO BAND 4 BAND</h1>
@@ -22,4 +22,4 @@ const GlassmorphismBox: React.FC = () => {
 	);
 };
 
-export default GlassmorphismBox;
+export default InstructionBox;
