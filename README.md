@@ -1,11 +1,5 @@
-
-<h1 style="text-align: center;">Band4Band</h1>
-
-<div style="text-align: center;">
-  ![ethereum](https://github.com/huey-nibiru/Band4Band/assets/26775577/9a23bd52-cca6-4cb8-9dec-8bb1f279fe9a)
-
-</div>
-
+# Band4Band
+![ethereum](https://github.com/huey-nibiru/Band4Band/assets/26775577/9a23bd52-cca6-4cb8-9dec-8bb1f279fe9a)
 
 Band4Band is a blockchain-based platform that allows users to engage in band-versus-band matches while wagering cryptocurrency. Users can connect their wallets via MetaMask, create profiles, and participate in matches where the winner receives $1000 from the loser. The project emphasizes anonymity until the end of each match to maintain privacy.
 
