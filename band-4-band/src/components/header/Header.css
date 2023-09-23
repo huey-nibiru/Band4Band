@@ -15,6 +15,7 @@
 	letter-spacing: 5px;
 	animation: pulse 10s infinite;
 	text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+	z-index: 2;
 }
 
 @keyframes pulse {

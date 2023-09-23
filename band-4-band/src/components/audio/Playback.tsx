@@ -23,30 +23,27 @@ const AudioButton: React.FC<AudioButtonProps> = ({ audioFile }) => {
 	};
 
 	useEffect(() => {
-		if (audioRef.current) {
-			audioRef.current.addEventListener("ended", () => {
-				audioRef.current?.play();
-			});
-		}
-	}, [audioFile]);
-
-	// Start audio playback on component mount
-	useEffect(() => {
-		if (audioRef.current) {
-			audioRef.current.play();
+		// Simulate a click on the button to start playing the audio
+		const button = document.getElementById("playback-button");
+		if (button) {
+			button.click();
 		}
 	}, []);
 
 	return (
 		<div className="audio-button-container">
-			<button className="audio-button" onClick={toggleAudio}>
+			<audio ref={audioRef} src={audioFile} autoPlay loop />
+			<button
+				id="playback-button"
+				className="audio-button"
+				onClick={toggleAudio}
+			>
 				{isPlaying ? (
 					<FontAwesomeIcon icon={faPause} className="pause-icon" />
 				) : (
 					<FontAwesomeIcon icon={faPlay} className="play-icon" />
 				)}
 			</button>
-			<audio ref={audioRef} src={audioFile} autoPlay loop />
 		</div>
 	);
 };
