@@ -1,0 +1,38 @@
+/* src/components/Header.css */
+.navbar {
+	background-color: #101820;
+	color: #00ff00;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	text-align: center;
+	padding: 1rem 0;
+	box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+	font-size: 2rem;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 5px;
+	animation: pulse 10s infinite;
+	text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+}
+
+@keyframes pulse {
+	0% {
+		text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+		transform: scale(1);
+	}
+	50% {
+		text-shadow: 0 0 20px rgba(0, 255, 0, 0.8);
+		transform: scale(1.1);
+	}
+	100% {
+		text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+		transform: scale(1);
+	}
+}
+
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+}
