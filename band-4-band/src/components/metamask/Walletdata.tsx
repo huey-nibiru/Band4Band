@@ -1,13 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { createClient } from "@supabase/supabase-js";
 
-const supabaseUrl = "YOUR_SUPABASE_URL";
-const supabaseKey = "YOUR_SUPABASE_API_KEY";
+const supabaseUrl = "https://otglfniuitvpgotpjbvb.supabase.co";
+const supabaseKey =
+	"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im90Z2xmbml1aXR2cGdvdHBqYnZiIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTU1MjUwMTQsImV4cCI6MjAxMTEwMTAxNH0.2N15fnDhc5X8IDKAlHdZOQ_YIk_Q7T9wSuSUqIu4yjM";
 
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 const WalletData: React.FC = () => {
 	const [walletAddress, setWalletAddress] = useState<string | null>(null);
+	const [balance, setBalance] = useState<number | null>(null);
+	const [username, setUsername] = useState<string | null>("");
+	const [isStoring, setIsStoring] = useState(false);
 
 	useEffect(() => {
 		const connectToMetaMask = async () => {
@@ -20,13 +24,20 @@ const WalletData: React.FC = () => {
 					if (accounts && accounts.length > 0) {
 						setWalletAddress(accounts[0]);
 
+						// Retrieve the balance from MetaMask
+
 						// Store wallet data in Supabase
-						if (walletAddress) {
+						if (walletAddress && balance !== null && username) {
+							setIsStoring(true); // Show a loading indicator
 							const { data, error } = await supabase.from("wallets").upsert([
 								{
-									address: walletAddress,
+									wallet_address: walletAddress,
+									balance: balance,
+									username: username,
 								},
 							]);
+
+							setIsStoring(false); // Hide the loading indicator
 
 							if (error) {
 								console.error("Error storing wallet data:", error);
@@ -45,11 +56,28 @@ const WalletData: React.FC = () => {
 		};
 
 		connectToMetaMask();
-	}, []);
+	}, [balance, username, walletAddress]);
+
+	const handleUsernameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+		setUsername(event.target.value);
+	};
 
 	return (
-		<div>
-			<p>Connected Wallet Address: {walletAddress}</p>
+		<div class="glassmorphism-box">
+			<div class="content">
+				<h1>Profile Setup</h1>
+				<p>Connected Wallet: {walletAddress}</p>
+				<p>Balance: {balance} ETH</p>
+
+				<input
+					type="text"
+					placeholder="Enter Username"
+					value={username || ""}
+					onChange={handleUsernameChange}
+				/>
+
+				{isStoring ? <p>Storing data...</p> : null}
+			</div>
 		</div>
 	);
 };

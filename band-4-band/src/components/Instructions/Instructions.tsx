@@ -5,16 +5,30 @@ import "./Instructions.css";
 const InstructionBox: React.FC = () => {
 	return (
 		<div className="glassmorphism-box">
-			<h1>LETS GO BAND 4 BAND</h1>
+			<h1>How To Play</h1>
 			<div className="intsruction-details">
 				<ol>
 					<li>Connect with metamask</li>
-					<li>Create a profile</li>
-					<li>Address stays anon until the end</li>
-					<li>Go band for band until you cant anymore</li>
-					<li>Loser loses 1 band to the winner instant transfer</li>
+					<li>Choose a temporary username and </li>
 					<li>
-						Opponent wallet address and amount revealed at end of the match
+						You and your opponent's address will remain anonymous until the end
+						of the match
+					</li>
+					<li>Choose a wager amount</li>
+					<li>Choose an increment amount</li>
+					<li>
+						Each player will reveal their total wallet balance in the selected
+						increments
+					</li>
+					<li>
+						First person to reveal their total balance loses (5 second cooldown
+						limit or you lose)
+					</li>
+					<li>Loser instantly has wager amount transfered to the winner</li>
+					<li>Both winner and loser addresses are revealed at the very end</li>
+					<li>
+						(PREMIUM FEATURE) Public B4B Duel connected to your personal Twitter
+						account
 					</li>
 				</ol>
 			</div>
