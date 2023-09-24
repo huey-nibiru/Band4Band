@@ -6,7 +6,6 @@ const ConnectedPage: React.FC = () => {
 		<>
 			<div id="test"></div>
 			<Header />
-			{/*<ProfileSettings walletAddress={walletAddress} onSave={saveUsername} />*/}
 		</>
 	);
 };
