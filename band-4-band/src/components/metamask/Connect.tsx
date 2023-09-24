@@ -5,6 +5,7 @@ import ProfileSettings from "../profile/Settings"; // Import the ProfileSettings
 const Connectbutton: React.FC = () => {
 	const [connected, setConnected] = useState(false);
 	const [walletAddress, setWalletAddress] = useState<string | null>(null);
+	console.log("connected:", connected);
 
 	function formatWalletAddress(walletAddress: string | null): string {
 		if (!walletAddress) return "";
