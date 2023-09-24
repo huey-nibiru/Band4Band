@@ -1,9 +1,12 @@
 import React, { useCallback, useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 import "./Connect.css";
-import ProfileSettings from "../profile/Settings"; // Import the ProfileSettings component
 
 const Connectbutton: React.FC = () => {
 	const [connected, setConnected] = useState(false);
+	const navigate = useNavigate();
+
 	const [walletAddress, setWalletAddress] = useState<string | null>(null);
 	console.log("connected:", connected);
 
@@ -18,6 +21,7 @@ const Connectbutton: React.FC = () => {
 	const connectToMetaMask = useCallback(async () => {
 		try {
 			// Check if MetaMask is installed
+
 			if (window.ethereum) {
 				await window.ethereum.send("eth_requestAccounts");
 				const accounts = await window.ethereum.request({
@@ -26,6 +30,7 @@ const Connectbutton: React.FC = () => {
 				if (accounts && accounts.length > 0) {
 					setWalletAddress(accounts[0]);
 					setConnected(true);
+					navigate("/connected");
 				}
 			} else {
 				alert("MetaMask is not installed.");
@@ -36,31 +41,6 @@ const Connectbutton: React.FC = () => {
 		}
 	}, []);
 
-	const saveUsername = (username: string) => {
-		// Send a request to your backend API to save the username associated with the wallet address
-		// You can use fetch or a library like axios for this.
-		// Example using fetch:
-		fetch("/api/save-username", {
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-			},
-			body: JSON.stringify({ username, walletAddress }),
-		})
-			.then((response) => {
-				if (response.ok) {
-					// Username saved successfully
-					alert("Username saved successfully.");
-				} else {
-					alert("Error saving username.");
-				}
-			})
-			.catch((error) => {
-				console.error(error);
-				alert("Error saving username.");
-			});
-	};
-
 	return (
 		<>
 			{connected ? (
@@ -69,10 +49,6 @@ const Connectbutton: React.FC = () => {
 					<br />
 					{formatWalletAddress(walletAddress)}
 					{/* Render the ProfileSettings component */}
-					<ProfileSettings
-						walletAddress={walletAddress}
-						onSave={saveUsername}
-					/>
 				</div>
 			) : (
 				<button className="connect-button" onClick={connectToMetaMask}>

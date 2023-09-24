@@ -21,6 +21,7 @@ const ProfileSettings: React.FC<ProfileSettingsProps> = ({
 
 		onSave(username);
 	};
+	
 
 	return (
 		<div className="profile-settings">

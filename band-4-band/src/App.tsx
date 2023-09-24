@@ -1,5 +1,6 @@
 import "./App.css";
 import Homepage from "./pages/home/Home";
+import ConnectedPage from "./pages/home/Connected";
 import { Routes, Route } from "react-router-dom";
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
 		<>
 			<Routes>
 				<Route path="/" element={<Homepage />} />
+				<Route path="/connected" element={<ConnectedPage />} />
 			</Routes>
 		</>
 	);
