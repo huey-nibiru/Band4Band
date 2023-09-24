@@ -38,27 +38,7 @@
 	margin: 0 auto;
 }
 
-/* src/components/ConnectButton.css */
-.connect-button {
-	background-color: transparent;
-	color: #00ff00;
-	border: 2px solid #00ff00;
-	padding: 10px 20px;
-	border-radius: 4px;
-	font-size: 16px;
-	cursor: pointer;
-	text-transform: uppercase;
-	transition: all 0.3s ease-in-out;
-	position: absolute;
-	top: 20px;
-	right: 10px;
-}
 
-.connect-button:hover {
-	background-color: #00ff00;
-	color: #101820;
-	animation: pulse 1s infinite;
-}
 
 @keyframes pulse {
 	0% {
@@ -70,16 +50,4 @@
 	100% {
 		box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
 	}
-}
-
-.connected {
-	position: absolute;
-	top: 10px; /* Adjust the top value as needed */
-	right: 10px; /* Adjust the right value as needed */
-	background-color: #000000;
-	padding: 10px;
-	border: 1px solid #ccc;
-	border-radius: 5px;
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-	font-size: 12px; /* Adjust the font size as needed */
 }
