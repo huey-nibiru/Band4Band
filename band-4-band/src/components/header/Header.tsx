@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react";
+import React from "react";
 import "./Header.css";
 import AudioButton from "../audio/Playback";
 import bands from "../../assets/bands.mp3";
