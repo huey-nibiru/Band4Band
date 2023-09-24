@@ -10,7 +10,6 @@ const Connectbutton: React.FC = () => {
 	function formatWalletAddress(walletAddress: string | null): string {
 		if (!walletAddress) return "";
 		if (walletAddress.length <= 9) return walletAddress; // Return the full address if it's very short
-
 		const firstFive = walletAddress.slice(0, 5);
 		const lastFour = walletAddress.slice(-4);
 		return `${firstFive}...${lastFour}`;
