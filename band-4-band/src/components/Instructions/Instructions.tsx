@@ -8,8 +8,11 @@ const InstructionBox: React.FC = () => {
 			<h1>How To Play</h1>
 			<div className="intsruction-details">
 				<ol>
-					<li>Connect with metamask</li>
-					<li>Choose a temporary username and </li>
+					<li>Connect wallet</li>
+					<li>
+						Choose a username and PFP (Frequent name + pfp changing is
+						advisable)
+					</li>
 					<li>
 						You and your opponent's address will remain anonymous until the end
 						of the match
@@ -27,8 +30,8 @@ const InstructionBox: React.FC = () => {
 					<li>Loser instantly has wager amount transfered to the winner</li>
 					<li>Both winner and loser addresses are revealed at the very end</li>
 					<li>
-						(PREMIUM FEATURE) Public B4B Duel connected to your personal Twitter
-						account
+						(PREMIUM FEATURE) Connect your personal Twitter account to Mog your
+						haters in public.
 					</li>
 				</ol>
 			</div>
