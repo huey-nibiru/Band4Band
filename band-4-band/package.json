@@ -13,6 +13,7 @@
     "@fortawesome/fontawesome-svg-core": "^6.4.2",
     "@fortawesome/free-solid-svg-icons": "^6.4.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
+    "@supabase/supabase-js": "^2.36.0",
     "@web3-react/core": "^8.2.2",
     "@web3-react/injected-connector": "^6.0.7",
     "ethers": "^6.7.1",
