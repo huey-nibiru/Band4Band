@@ -63,8 +63,8 @@ const WalletData: React.FC = () => {
 	};
 
 	return (
-		<div class="glassmorphism-box">
-			<div class="content">
+		<div className="glassmorphism-box">
+			<div className="content">
 				<h1>Profile Setup</h1>
 				<p>Connected Wallet: {walletAddress}</p>
 				<p>Balance: {balance} ETH</p>
