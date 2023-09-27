@@ -23,3 +23,16 @@ p {
 	margin: 10px 0;
 	text-align: left;
 }
+
+.centered-form {
+	display: flex;
+	flex-direction: column;
+	align-items: center; /* Center horizontally */
+	justify-content: center; /* Center vertically */
+ /* Optional to center in the viewport */
+}
+
+.profile {
+	margin: 10px;
+	text-align: center;
+}
