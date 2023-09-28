@@ -7,7 +7,6 @@ const supabaseKey =
 	"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im90Z2xmbml1aXR2cGdvdHBqYnZiIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTU1MjUwMTQsImV4cCI6MjAxMTEwMTAxNH0.2N15fnDhc5X8IDKAlHdZOQ_YIk_Q7T9wSuSUqIu4yjM";
 
 const supabase = createClient(supabaseUrl, supabaseKey);
-
 const WalletData: React.FC = () => {
 	const [walletAddress, setWalletAddress] = useState<string | null>(null);
 	const [balance, setBalance] = useState<number | null>(null);
