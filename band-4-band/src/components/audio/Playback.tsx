@@ -11,6 +11,14 @@ const AudioButton: React.FC<AudioButtonProps> = ({ audioFile }) => {
 	const audioRef = useRef<HTMLAudioElement>(null);
 	const [isPlaying, setIsPlaying] = useState<boolean>(true);
 
+	useEffect(() => {
+		// Simulate a click on the button to start playing the audio
+		const button = document.getElementById("audio-button");
+		if (button) {
+			button.click();
+		}
+	}, []);
+
 	const toggleAudio = () => {
 		if (audioRef.current) {
 			if (isPlaying) {
@@ -21,14 +29,6 @@ const AudioButton: React.FC<AudioButtonProps> = ({ audioFile }) => {
 			setIsPlaying(!isPlaying);
 		}
 	};
-
-	useEffect(() => {
-		// Simulate a click on the button to start playing the audio
-		const button = document.getElementById("playback-button");
-		if (button) {
-			button.click();
-		}
-	}, []);
 
 	return (
 		<div className="audio-button-container">
