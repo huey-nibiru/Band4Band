@@ -8,7 +8,7 @@
 
 
 
-Band4Band is a blockchain-based platform that allows users to engage in band-versus-band matches while wagering cryptocurrency. Users can connect their wallets via MetaMask, create profiles, and participate in matches where the winner receives $1000 from the loser. The project emphasizes anonymity until the end of each match to maintain privacy.
+Band4Band is a blockchain-based platform that allows users to engage in band-versus-band matches while wagering cryptocurrency. Users can connect their wallets via MetaMask, create profiles, and participate in matches where the winner receives the wager amount from the loser. The project emphasizes anonymity until the end of each match to maintain privacy.
 
 ## Features
 
